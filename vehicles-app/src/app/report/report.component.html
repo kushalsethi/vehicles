@@ -1,0 +1,47 @@
+<p>
+  Select file to see vehicle report!
+</p>
+ 
+<label>
+	<input type="file" (change)="selectFile($event)" accept=".xml">
+</label>
+ 
+<button [disabled]="!selectedFiles"
+	(click)="upload()">Upload</button>
+<br/>
+  <div *ngIf="reportResponse">
+    <div style="overflow-y:auto; height:100px;">
+      <table border="0" align="center">
+        <thead bgcolor="#00ace6">
+          <tr>
+            <th>Vehicle Name</th>
+            <th>Vehicle ID</th>
+            <th>Frame Material</th>
+            <th>Powertrain</th>
+            <th>Number Of Wheels</th>
+            <th>Timestamp</th>
+            <th>File Name</th>
+          </tr>
+        </thead>
+        <tbody bgcolor="#b3ecff">
+          <tr *ngFor="let report of reports">
+            <td>{{report.vehicleType}}</td>
+            <td>{{report.vehicleId}}</td>
+            <td>{{report.frameMaterial}}</td>
+            <td>{{report.powerTrain}}</td>
+            <td>{{report.numOfWheels}}</td>
+            <td>{{report.timeStamp}}</td>
+            <td>{{report.fileName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Summary of the report</p>
+      <ul>Big Wheel: {{bigWheelCount}}</ul>
+      <ul>Bicycle: {{bicycleCount}}</ul>
+      <ul>Car: {{carCount}}</ul>
+      <ul>Motorcycle: {{motorcycleCount}}</ul>
+      <ul>Hang Glider: {{hangGliderCount}}</ul>
+  </div>
+
+ 
