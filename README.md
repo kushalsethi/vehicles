@@ -1,5 +1,5 @@
 # vehicles
-A application that categorizes vehicles read from xml file based on types and displays summary report in tabular format
+An application that categorizes vehicles read from xml file based on types and displays summary report in tabular format
 
 `vehicles-app` is the front end developed in angular 6, this application asks user to upload a xml file which is then sent to REST API for
 generating report summary for catergorization.
